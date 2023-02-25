@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raviteja Errepally</title>
+</head>
+<body>
+    <h2>Painter entry Raviteja Errepally</h2>
+    <br />
+
+    <P>
+    <form class="form-group">
+      <label for="hidden_painter">The hidden painter name</label>
+      <input
+        type="password" id="password" name="form1_age" min="8" max="25" step="2" value="Monet"
+      />
+      <br />
+
+      <label for="Guess_painter">Guess the painter </label>
+      <input type="text" id="guess" name="form1_nick" autofocus /> 
+      <br />
+
+      <input class="button"
+        type="button"
+        onclick="checkPainter()"
+        value="Check the guess"
+      />
+    </form>
+  </P>
+    <p id="result">This text will be replaced</p>
+    
+  </body>
+  <script type="text/javascript">
+    let good =0;
+    let oops =0;
+    function checkPainter(){
+        hidden = document.getElementById("password").value
+        guess = document.getElementById("guess").value
+        results = document.getElementById("result")
+
+        if(hidden == guess  ){
+          good++;
+            alert("You got it right");
+
+
+p = document.getElementById("result")
+            document.getElementById("result").innerHTML =`GoodCount: ${good}`;
+        }else{
+          oops++;
+            alert("Sorry");
+
+
+p = document.getElementById("result")
+
+            document.getElementById("result").innerHTML =`OopsCount: ${oops}`;
+        }
+    }
+  </script>
+</html>
