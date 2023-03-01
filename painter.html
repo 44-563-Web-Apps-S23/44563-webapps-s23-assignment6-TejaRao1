@@ -54,5 +54,29 @@ p = document.getElementById("result")
             document.getElementById("result").innerHTML =`OopsCount: ${oops}`;
         }
     }
+    //image onclick functionality
+    let useImage = 1;
+    function selectImage() {
+      switch (useImage) {
+        case 1:
+          document.getElementById("image").src = "./images/Lagerstroemia.jpg";
+          useImage++;
+          break;
+        case 2:
+          document.getElementById("image").src = "./images/Gaillardia.jpg";
+          useImage++;
+          break;
+        case 3:
+          document.getElementById("image").src = "./images/pandorea.jpg";
+          useImage = 1;
+      }
+    }
+    function noOfGuesses(countNumberofWrongs) {
+        let count = countNumberofWrongs;
+        if (count == 10) {
+          alert("Sorry, ran out of guesses");
+          oops = 0;
+        }
+      }
   </script>
 </html>
