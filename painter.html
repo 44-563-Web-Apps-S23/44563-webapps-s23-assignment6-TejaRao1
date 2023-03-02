@@ -53,8 +53,7 @@
         </div>
       </div>
     </div>
-  </body>
-  <script type="text/javascript">
+      <script type="text/javascript">
     let good =0;
     let oops =0;
     function checkPainter(){
@@ -62,16 +61,17 @@
         guess = document.getElementById("guess").value
         final = document.getElementById("result")
 
-        if(hide == guess  ){
+        if(name == guess  ){
+          alert("You got it right");
           good++;
-            alert("You got it right");
 
 
 p = document.getElementById("result")
             document.getElementById("result").innerHTML =`GoodCount: ${good}`;
-        }else{
+        }
+        else{
+          alert("Sorry");
           oops++;
-            alert("Sorry");
 
 
 p = document.getElementById("result")
@@ -103,4 +103,5 @@ p = document.getElementById("result")
         }
       }
   </script>
+  </body>
 </html>
