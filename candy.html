@@ -59,7 +59,7 @@
       </form>
       <br/>
       <form class="form-group">
-        <label for="size"><span>Enter size</span></label>
+        <label for="size"><span>Enter box size</span></label>
         <input
           type="text"
           id="size"
@@ -67,7 +67,7 @@
           value="size"
         />
         <br />
-        <label for="price"><span>Enter price</span></label>
+        <label for="price"><span>Enter candy price</span></label>
         <input
           type="text"
           id="price"
@@ -77,54 +77,56 @@
         <input class="btn btn-dark" type="button" onclick="updateBox()" value="Update the box" />
       </form>
       <div class="container">
-        <p id="result">my_candy_box</p>
+        <p id="result">candy_set</p>
       </div>
     </div>
 
     <script>
       //SELECT BOX
-      let my_candy_box = {};
+      let candy_set = {};
       let candy_output = document.getElementById("result");
       function selectBox() {
+        
         // let my_candy_box = {};
         let dark = document.getElementById("dark").checked
         let nuts = document.getElementById("nuts").checked
         let chewy = document.getElementById("chewy").checked
-        console.log(my_candy_box);
+        console.log(candy_set);
+
         if(dark){
-            my_candy_box.dark = true
+            candy_set.dark = true
             
         }else{
-            my_candy_box.dark = false;
+            candy_set.dark = false;
         }
         if(nuts){
-            my_candy_box.nuts = true
+            candy_set.nuts = true
             
         }else{
-            my_candy_box.nuts = false;
+            candy_set.nuts = false;
         }
         if(chewy){
-            my_candy_box.chewy = true
+            candy_set.chewy = true
             
         }else{
-            my_candy_box.chewy = false;
+            candy_set.chewy = false;
          
         }
-        candy_output.innerHTML = "DARK " + my_candy_box.dark +" "+ "NUTS " + my_candy_box.nuts +" "+ "CHEWY " + my_candy_box.chewy;
+        candy_output.innerHTML = "DARK " + candy_set.dark +" "+ "NUTS " + candy_set.nuts +" "+ "CHEWY " + candy_set.chewy;
         document.getElementById("dark").checked = false;  
         document.getElementById("nuts").checked = false;
         document.getElementById("chewy").checked = false;
       }
       //UPDATE BOX
       function updateBox() {
-        let size = document.getElementById("size").value;
-        let price = document.getElementById("price").value;
-        if(!size && !price || !size && price || size && !price){
+        let box_size = document.getElementById("box_size").value;
+        let box_price = document.getElementById("box_price").value;
+        if(!box_size && !box_price || !box_size && box_price || box_size && !box_price){
             document.getElementById("result").innerText = "Please enter both size and price";
         }else{
             my_candy_box = {};
-            my_candy_box[size] = price;
-            document.getElementById("result").innerHTML = "my_candy_box " +":"+  JSON.stringify(my_candy_box);
+            my_candy_box[box_size] = box_price;
+            document.getElementById("result").innerHTML = "candy_set " +":"+  JSON.stringify(candy_set);
         }
       } 
     </script>
